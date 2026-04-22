@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q74M8YL21V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q74M8YL21V');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications — Mint Precision Analytical</title>
+    <meta name="description" content="Research publications from Mint Precision Analytical on computational immunogenicity risk assessment for peptide manufacturing.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0f14' width='100' height='100' rx='20'/><text y='70' x='50' text-anchor='middle' font-size='60' fill='%2300d4aa'>M</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f14;
+            --bg-secondary: #0d1419;
+            --mint-primary: #00d4aa;
+            --mint-secondary: #00f5c4;
+            --mint-glow: rgba(0, 212, 170, 0.3);
+            --mint-dark: #00a080;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none; z-index: 0;
+        }
+
+        .glow-orb {
+            position: fixed; border-radius: 50%; filter: blur(100px);
+            pointer-events: none; animation: pulse 8s ease-in-out infinite;
+        }
+        .glow-orb.a { width: 400px; height: 400px; background: var(--mint-glow); top: -80px; right: 10%; opacity: 0.25; }
+        .glow-orb.b { width: 300px; height: 300px; background: rgba(0,160,128,0.2); bottom: -60px; left: 5%; opacity: 0.2; animation-delay: -4s; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.35; transform: scale(1.08); }
+        }
+
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 24px 60px; display: flex; align-items: center; justify-content: space-between;
+            background: rgba(10, 15, 20, 0.9); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 212, 170, 0.1);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .logo-icon {
+            width: 36px; height: 36px; border: 1px solid rgba(0, 212, 170, 0.4);
+            border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            background: rgba(0, 212, 170, 0.1);
+        }
+        .logo-icon svg { width: 18px; height: 18px; }
+        .logo-text { font-size: 14px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-primary); }
+        .logo-text span { color: var(--mint-primary); }
+        .nav-links { display: flex; align-items: center; gap: 36px; }
+        .nav-links a { font-size: 13px; font-weight: 400; color: var(--text-secondary); text-decoration: none; letter-spacing: 0.5px; transition: color 0.3s ease; }
+        .nav-links a:hover { color: var(--mint-primary); }
+        .nav-links a.active { color: var(--mint-primary); }
+        .nav-contact-btn {
+            font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+            color: var(--bg-primary); background: var(--mint-primary); border: none;
+            padding: 10px 24px; border-radius: 6px; cursor: pointer; text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .nav-contact-btn:hover { background: var(--mint-secondary); box-shadow: 0 0 30px rgba(0, 212, 170, 0.3); }
+
+        .page {
+            position: relative; z-index: 1; max-width: 1000px;
+            margin: 0 auto; padding: 140px 60px 80px;
+        }
+        .page-label { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--mint-secondary); margin-bottom: 16px; }
+        .page-title { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 500; color: var(--text-primary); margin-bottom: 16px; letter-spacing: -0.5px; }
+        .page-title span { color: var(--mint-primary); }
+        .page-subtitle { font-size: 16px; font-weight: 300; color: var(--text-secondary); line-height: 1.7; max-width: 650px; margin-bottom: 60px; }
+
+        .featured {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 14px; padding: 40px; position: relative; overflow: hidden;
+            margin-bottom: 48px; transition: border-color 0.3s ease;
+        }
+        .featured:hover { border-color: rgba(0, 212, 170, 0.4); }
+        .featured::before {
+            content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+            background: linear-gradient(180deg, var(--mint-primary), var(--mint-dark));
+        }
+        .featured-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(0, 212, 170, 0.1); border: 1px solid rgba(0, 212, 170, 0.3);
+            padding: 5px 14px; border-radius: 20px; font-size: 10px; font-weight: 600;
+            letter-spacing: 2px; text-transform: uppercase; color: var(--mint-secondary); margin-bottom: 20px;
+        }
+        .featured-badge::before {
+            content: ''; width: 5px; height: 5px; background: var(--mint-primary);
+            border-radius: 50%; box-shadow: 0 0 8px var(--mint-primary);
+        }
+        .paper-title {
+            font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 500;
+            color: var(--text-primary); margin-bottom: 16px; line-height: 1.3;
+        }
+        .paper-abstract { font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8; margin-bottom: 28px; }
+        .paper-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+        .meta-item { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+        .meta-item svg { width: 14px; height: 14px; stroke: var(--mint-primary); }
+        .paper-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px; border-radius: 8px; font-family: 'Outfit', sans-serif;
+            font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+            text-decoration: none; transition: all 0.3s ease;
+        }
+        .paper-btn.coming-soon {
+            background: rgba(0, 212, 170, 0.15); color: var(--mint-primary);
+            border: 1px solid rgba(0, 212, 170, 0.3); cursor: default;
+        }
+
+        .notify-section {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(0, 212, 170, 0.15);
+            border-radius: 14px; padding: 40px; margin-top: 40px;
+        }
+        .notify-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 500; color: var(--text-primary); margin-bottom: 8px; }
+        .notify-desc { font-size: 14px; color: var(--text-muted); font-weight: 300; margin-bottom: 28px; }
+        .notify-form { display: flex; flex-direction: column; gap: 16px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group label { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mint-secondary); }
+        .form-group input {
+            background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 8px; padding: 12px 16px; font-family: 'Outfit', sans-serif;
+            font-size: 14px; font-weight: 300; color: var(--text-primary); outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input::placeholder { color: var(--text-muted); }
+        .form-group input:focus { border-color: var(--mint-primary); box-shadow: 0 0 20px rgba(0, 212, 170, 0.1); }
+        .notify-submit {
+            align-self: flex-start; background: var(--mint-primary); color: var(--bg-primary);
+            border: none; padding: 12px 32px; border-radius: 8px; font-family: 'Outfit', sans-serif;
+            font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+            cursor: pointer; transition: all 0.3s ease; margin-top: 8px;
+        }
+        .notify-submit:hover { background: var(--mint-secondary); box-shadow: 0 0 30px rgba(0, 212, 170, 0.3); }
+        .notify-note { font-size: 11px; color: var(--text-muted); }
+        .form-success { display: none; padding: 24px 0; }
+        .form-success.show { display: block; }
+        .form-success h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--mint-primary); margin-bottom: 8px; }
+        .form-success p { font-size: 14px; color: var(--text-secondary); }
+
+        .footer {
+            position: relative; z-index: 1; max-width: 1000px; margin: 0 auto;
+            padding: 40px 60px; border-top: 1px solid rgba(0, 212, 170, 0.08);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .footer-left { display: flex; align-items: center; gap: 12px; }
+        .footer-text { font-size: 12px; color: var(--text-muted); letter-spacing: 1px; }
+        .footer-right { font-size: 12px; color: var(--text-muted); }
+
+        .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .nav { padding: 16px 24px; }
+            .nav-links { display: none; }
+            .page { padding: 110px 24px 60px; }
+            .page-title { font-size: 36px; }
+            .featured { padding: 28px; }
+            .paper-title { font-size: 22px; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer { padding: 30px 24px; flex-direction: column; gap: 12px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-overlay"></div>
+    <div class="glow-orb a"></div>
+    <div class="glow-orb b"></div>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--mint-primary);">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <span class="logo-text">Mint <span>Precision</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="publications.html" class="active">Publications</a>
+            <a href="index.html#contact" class="nav-contact-btn">Get In Touch</a>
+        </div>
+    </nav>
+
+    <div class="page">
+        <div class="fade-in">
+            <div class="page-label">Research</div>
+            <h1 class="page-title">Our <span>Publications</span></h1>
+            <p class="page-subtitle">
+                Original research on computational immunogenicity risk assessment for peptide manufacturing impurities.
+            </p>
+        </div>
+
+        <div class="featured fade-in">
+            <div class="featured-badge">Open Access</div>
+            <h2 class="paper-title">Per-Residue Immunogenicity Risk Classification of Manufacturing Impurities in Semaglutide: Substitution, Deletion, and Insertion Sensitivity Profiles</h2>
+            <p class="paper-abstract">
+                A systematic computational analysis of all 31 residue positions in semaglutide, evaluating how three classes of manufacturing impurities — amino acid substitutions, deletions, and insertions — alter immunogenicity risk. Each position is scored for its impact on immune recognition, identifying critical hotspots where manufacturing impurities carry elevated clinical concern.
+            </p>
+            <div class="paper-meta">
+                <div class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Mint Precision Analytical
+                </div>
+                <div class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    2026
+                </div>
+                <div class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Research Paper
+                </div>
+            </div>
+            <span class="paper-btn coming-soon">Coming Soon</span>
+        </div>
+
+        <div class="notify-section fade-in">
+            <h3 class="notify-title">Stay Updated</h3>
+            <p class="notify-desc">Be the first to know when this paper and future research from Mint Precision Analytical becomes available.</p>
+            <form class="notify-form" id="notifyForm" action="https://formspree.io/f/xreaywdl" method="POST">
+                <input type="hidden" name="form_type" value="publication_notify">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company" placeholder="Organization">
+                    </div>
+                </div>
+                <button type="submit" class="notify-submit">Notify Me</button>
+                <p class="notify-note">We'll notify you when the paper is published. No spam.</p>
+            </form>
+            <div class="form-success" id="formSuccess">
+                <h3>You're On the List</h3>
+                <p>We'll let you know as soon as the paper is available. Thank you for your interest.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <div class="logo-icon" style="width: 28px; height: 28px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--mint-primary); width: 14px; height: 14px;">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <span class="footer-text">MINT PRECISION ANALYTICAL</span>
+        </div>
+        <div class="footer-right">&copy; 2026 Mint Precision Analytical. All rights reserved.</div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        const form = document.getElementById('notifyForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('.notify-submit');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    form.style.display = 'none';
+                    document.getElementById('formSuccess').classList.add('show');
+                } else {
+                    btn.textContent = 'Notify Me';
+                    btn.disabled = false;
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (err) {
+                btn.textContent = 'Notify Me';
+                btn.disabled = false;
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
