@@ -13,7 +13,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mint Precision Analytical — Immunogenicity Risk Assessment for Peptide Manufacturing</title>
     <meta name="description" content="Computational immunogenicity risk assessment for peptide manufacturing. Helping CDMOs and pharmaceutical manufacturers make smarter purification decisions.">
+    <link rel="canonical" href="https://mintprecision.com/">
+
+    <!-- Social sharing (Open Graph / Twitter) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mintprecision.com/">
+    <meta property="og:site_name" content="Mint Precision Analytical">
+    <meta property="og:title" content="Mint Precision Analytical — Immunogenicity Risk Assessment for Peptide Manufacturing">
+    <meta property="og:description" content="Impurities are inevitable. We make them irrelevant. Physician-led immunogenicity risk analysis for peptide manufacturing.">
+    <meta property="og:image" content="https://mintprecision.com/og-card.png">
+    <meta property="og:image:alt" content="Mint Precision Analytical">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mint Precision Analytical — Immunogenicity Risk Assessment for Peptide Manufacturing">
+    <meta name="twitter:description" content="Impurities are inevitable. We make them irrelevant. Physician-led immunogenicity risk analysis for peptide manufacturing.">
+    <meta name="twitter:image" content="https://mintprecision.com/og-card.png">
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0f14' width='100' height='100' rx='20'/><text y='70' x='50' text-anchor='middle' font-size='60' fill='%2300d4aa'>M</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -45,7 +62,6 @@
             overflow-x: hidden;
         }
 
-</div>
         /* ======================== */
         /* GRID OVERLAY - FULL PAGE */
         /* ======================== */
@@ -157,6 +173,43 @@
         .nav-contact-btn:hover {
             background: var(--mint-secondary);
             box-shadow: 0 0 30px rgba(0, 212, 170, 0.3);
+        }
+
+        /* Mobile menu toggle — hidden on desktop */
+        .nav-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            background: rgba(0, 212, 170, 0.08);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: var(--mint-primary);
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
         }
 
         /* ======================== */
@@ -708,6 +761,17 @@
             margin-top: 8px;
         }
 
+        .form-error {
+            text-align: center;
+            font-size: 13px;
+            color: #ff8787;
+            margin-top: 12px;
+        }
+
+        .form-error a {
+            color: var(--mint-primary);
+        }
+
         /* ======================== */
         /* FOOTER */
         /* ======================== */
@@ -815,10 +879,46 @@
         @media (max-width: 768px) {
             .nav {
                 padding: 16px 24px;
+                flex-wrap: wrap;
             }
 
+            .nav-toggle {
+                display: flex;
+            }
+
+            /* Collapsed drawer: full-width panel under the bar */
             .nav-links {
                 display: none;
+                flex-basis: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                margin-top: 16px;
+                background: rgba(10, 15, 20, 0.97);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(0, 212, 170, 0.15);
+                border-radius: 10px;
+                padding: 8px;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 14px 16px;
+                font-size: 15px;
+                border-bottom: 1px solid rgba(0, 212, 170, 0.08);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links .nav-contact-btn {
+                text-align: center;
+                margin-top: 8px;
+                border-bottom: none;
             }
 
             .hero {
@@ -875,20 +975,29 @@
             }
         }
     </style>
+    <noscript>
+        <style>
+            /* Without JS the IntersectionObserver never runs — show everything. */
+            .fade-in { opacity: 1 !important; transform: none !important; }
+        </style>
+    </noscript>
 </head>
 <body>
     <div class="grid-overlay"></div>
     <!-- NAVIGATION -->
     <nav class="nav" id="nav">
-       <a href="#" class="nav-logo">
-            <img src="Mint_Logo_Black_Cropped.png" alt="Mint Precision Analytical" style="height: 60px; width: auto;">
+       <a href="/" class="nav-logo">
+            <img src="Mint_Logo_Black_Cropped.png" alt="Mint Precision Analytical" width="300" height="60" style="height: 60px; width: auto;">
         </a>
-        <div class="nav-links">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
             <a href="#services">Services</a>
             <a href="#sample">Sample Output</a>
             <a href="#approach">Approach</a>
             <a href="#focus">Focus Areas</a>
-            <a href="#about">About</a>
+            <a href="#team">Our Team</a>
             <a href="publications.html">Publications</a>
             <a href="#contact" class="nav-contact-btn">Get In Touch</a>
         </div>
@@ -947,8 +1056,8 @@
     <section class="section" id="services">
         <div class="section-inner">
             <div class="fade-in">
+                <div class="section-label" style="font-size: 14px; letter-spacing: 4px;">What We Do</div>
                 <h2 class="section-title"><span style="font-size: 18px; font-weight: 400;">Looking</span> Beyond Purity</h2>
-                <div class="section-label" style="margin-bottom: 0; margin-top: -40px; margin-bottom: 40px; font-size: 14px; letter-spacing: 4px;">What We Do</div>
             </div>
             <div class="card-grid">
                 <div class="card fade-in">
@@ -1160,11 +1269,12 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about" style="border-top: 1px solid rgba(0, 212, 170, 0.06);">
+    <!-- OUR TEAM -->
+    <section class="section" id="team" style="border-top: 1px solid rgba(0, 212, 170, 0.06);">
+        <span id="about" aria-hidden="true"></span><!-- keeps old #about links working -->
         <div class="section-inner">
             <div class="fade-in">
-                <div class="section-label">Who We Are</div>
+                <div class="section-label">Our Team</div>
                 <h2 class="section-title">Founded by <span>Physicians</span></h2>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;" class="fade-in" id="about-grid">
@@ -1172,14 +1282,14 @@
                     <div style="position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--mint-primary), var(--mint-dark)); opacity: 0.8;"></div>
                     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 500; color: var(--text-primary); margin-bottom: 6px;">Zain Tariq, MD</h3>
                     <div style="font-size: 12px; color: var(--mint-primary); letter-spacing: 1px; text-transform: uppercase; font-weight: 500; margin-bottom: 16px;">CEO</div>
-                    <img src="zain-tariq.png" alt="Zain Tariq, MD" style="width: 100%; max-width: 180px; border-radius: 10px; margin-bottom: 16px; border: 1px solid rgba(0, 212, 170, 0.2);">
+                    <img src="zain-tariq.webp" alt="Zain Tariq, MD" width="800" height="1000" loading="lazy" decoding="async" style="width: 100%; max-width: 180px; height: auto; border-radius: 10px; margin-bottom: 16px; border: 1px solid rgba(0, 212, 170, 0.2);">
                     <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.7;">Physician-scientist building computational tools to bridge the gap between peptide manufacturing and clinical safety.</p>
                 </div>
                 <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(0, 212, 170, 0.15); border-radius: 12px; padding: 36px; position: relative; overflow: hidden;">
                     <div style="position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--mint-primary), var(--mint-dark)); opacity: 0.8;"></div>
                     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 500; color: var(--text-primary); margin-bottom: 6px;">Mustafa Zaidi, MD</h3>
                     <div style="font-size: 12px; color: var(--mint-primary); letter-spacing: 1px; text-transform: uppercase; font-weight: 500; margin-bottom: 16px;">COO</div>
-                    <img src="syed-zaidi.png" alt="Syed Zaidi, MD" style="width: 100%; max-width: 180px; border-radius: 10px; margin-bottom: 16px; border: 1px solid rgba(0, 212, 170, 0.2);">
+                    <img src="syed-zaidi.webp" alt="Mustafa Zaidi, MD" width="800" height="1000" loading="lazy" decoding="async" style="width: 100%; max-width: 180px; height: auto; border-radius: 10px; margin-bottom: 16px; border: 1px solid rgba(0, 212, 170, 0.2);">
                     <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.7;">Physician-scientist focused on operational management and sustainable growth while maintaining the Mint Standard.</p>
                 </div>
             </div>
@@ -1218,6 +1328,10 @@
                     <textarea id="message" name="message" placeholder="Tell us about your peptide manufacturing or analytical needs..." required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
+                <p class="form-error" id="formError" role="alert" hidden>
+                    Something went wrong sending that. Please email us directly at
+                    <a href="mailto:info@mintprecision.com">info@mintprecision.com</a>.
+                </p>
                 <p class="form-note">We typically respond within 24 hours.</p>
             </form>
 
@@ -1272,7 +1386,8 @@
 
         lb.innerHTML = semaData.map(r => {
             const s = riskStyles[r.risk];
-            return `<div style="text-align:center; font-size:8px; color:rgba(255,255,255,0.3); padding:2px 0; letter-spacing:0.5px;">${r.risk === 'HIGH' ? '●' : r.risk === 'ELEV' ? '◆' : ''}</div>`;
+            const mark = r.risk === 'HIGH' ? '●' : r.risk === 'ELEV' ? '◆' : '';
+            return `<div style="text-align:center; font-size:8px; color:${mark ? s.color : 'transparent'}; padding:2px 0; letter-spacing:0.5px;">${mark || '&nbsp;'}</div>`;
         }).join('');
 
         // Nav scroll effect
@@ -1281,30 +1396,64 @@
             nav.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Scroll-triggered fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    // Stagger the animation for sibling elements
-                    const siblings = entry.target.parentElement.querySelectorAll('.fade-in');
-                    const idx = Array.from(siblings).indexOf(entry.target);
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, idx * 100);
-                    observer.unobserve(entry.target);
-                }
+        // Mobile menu
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', String(open));
+        });
+        // Close the drawer after tapping a link
+        navLinks.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
             });
-        }, { threshold: 0.1 });
+        });
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        // Scroll-triggered fade-in animations.
+        // If anything here fails, reveal everything rather than leaving the page blank.
+        const faders = document.querySelectorAll('.fade-in');
+        const revealAll = () => faders.forEach(el => el.classList.add('visible'));
+
+        if ('IntersectionObserver' in window) {
+            try {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            // Stagger the animation for sibling elements
+                            const siblings = entry.target.parentElement.querySelectorAll('.fade-in');
+                            const idx = Array.from(siblings).indexOf(entry.target);
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                            }, idx * 100);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                faders.forEach(el => observer.observe(el));
+            } catch (err) {
+                revealAll();
+            }
+        } else {
+            revealAll();
+        }
 
         // Form handling
         const form = document.getElementById('contactForm');
+        const formError = document.getElementById('formError');
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = form.querySelector('.submit-btn');
+            formError.hidden = true;
             btn.textContent = 'Sending...';
             btn.disabled = true;
+
+            const fail = () => {
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
+                formError.hidden = false;
+            };
 
             try {
                 const response = await fetch(form.action, {
@@ -1317,14 +1466,10 @@
                     form.style.display = 'none';
                     document.getElementById('formSuccess').classList.add('show');
                 } else {
-                    btn.textContent = 'Send Message';
-                    btn.disabled = false;
-                    alert('Something went wrong. Please email us directly.');
+                    fail();
                 }
             } catch (err) {
-                btn.textContent = 'Send Message';
-                btn.disabled = false;
-                alert('Something went wrong. Please email us directly.');
+                fail();
             }
         });
     </script>
